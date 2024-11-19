@@ -1,0 +1,6 @@
+- IRF_inhouse_PMT = in-house IRF collected with photomultiplier tube (PMT)
+- IRF_inhouse_APD = in-house IRF collected with avalanche photodiode (APD)
+- IRF_DLT = publically available IRF obtained from https://github.com/dpscience/DLTReconvolution, file orginal name "irf_5ps.dat"
+- IRF_DL4FLI = publically available IRF obtained from https://github.com/jasontsmith2718/DL4FLI/tree/master/TPSFsimulation_FLIM, file original name "FLIM_IRF.mat"
+- IRF_flimfit_py = publically available IRF obtained from https://github.com/walshlab/FLIM-fit/tree/main/GUI, file original name "IRF_New.txt"
+- IRF_FPFLI = publically available IRF obtained from https://github.com/Dooongx/FPFLI/tree/main/Evaluation/sample_data, file original name "irf_measure.mat"
