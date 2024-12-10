@@ -1,2 +1,6 @@
 __pycache__/
 .ipynb_checkpoints
+data_simulation/older_versions/
+data_simulation/data/cropped_imgs/
+data_simulation/data/FLIM_synthetic/
+train_model/wandb/
