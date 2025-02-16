@@ -19,13 +19,13 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 
 To make predictions using **FLIMngo**, the following parameters must be specified:  
 
-- **Bin Width (ns)**: users must provide the `bin_width` of time channels in nanoseconds for the raw data.  
+- **Bin Width (ns)**: `bin_width` of time channels in nanoseconds for the raw data.  
 - ***x*, *y* dimensions**: input data must have equal `x` and `y` dimensions (e.g., `256 × 256`).  
-- **Time dimensions**: the model currently only accepts raw data with **256 time dimensions**.  
-  - if your data do not match this requirement, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.  
+- **Time dimensions**:model currently only accepts raw data with **256 time dimensions**.  
+  - for data that do not match this requirement, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.  
 - **Normalisation**: time dimensions must be normalised to a range between `0` and `1`.  
   - See `demo_notebooks` for preprocessing steps.  
-- **Background Masking**: the background should be masked using either intensity thresholding or by providing manual intensity masks (refer to `predict_celegans.ipynb` in `demo_notebooks` for details)  
+- **Background Masking**: the background should be masked either by intensity thresholding or by providing manual intensity masks (refer to `predict_celegans.ipynb` in `demo_notebooks` for details)  
 
 Predictions can be made using the **pretrained file** named `flimngo_pretrained_v13102024.pth`.
 Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
