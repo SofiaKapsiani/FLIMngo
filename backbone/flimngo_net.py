@@ -123,11 +123,11 @@ class FLIMngo(nn.Module):
         self.width_multiple = opt.width_multiple
         self.first_out = 86
         im_size = opt.imageSize
-        self.time_resolution = opt.time_resolution
+        self.bin_width = opt.bin_width
 
         # default time resolution training data have been simulated with
-        default_t_resolution = 0.09765625 
-        self.time_ratio = self.time_resolution/default_t_resolution
+        default_bin_width = 0.09765625 
+        self.bin_width_ratio = self.bin_width/default_bin_width
 
         # Define backbone module
         self.head = nn.Sequential(
@@ -184,5 +184,5 @@ class FLIMngo(nn.Module):
         # Final activation
         output = self.tail(concat_2)  # [B, 1, H, W]
 
-        return output.squeeze() * self.time_ratio  # Remove channel dimension if needed 
+        return output.squeeze() * self.bin_width_ratio  # Remove channel dimension if needed 
    
