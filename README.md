@@ -55,7 +55,7 @@ FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence 
 
 ### Notebooks  
 
-- **`predict_simulated.ipynb`**: Demonstrates FLIMngo's performance on synthetic FLIM data, where the same image is simulated with varying photon counts per pixel (ranging from **10 to 100 photon counts**).  
+- **`predict_simulated.ipynb`**: Demonstrates FLIMngo's performance on synthetic FLIM data, where the same image is simulated with varying photon counts per pixel.  
 - **`predict_reduced_photon_counts.ipynb`**: Provides examples of images acquired from different experiments with at least **100 photon counts per pixel**, alongside the same images with artificially reduced photon counts (**10–100 photons per pixel**).  
 
 
