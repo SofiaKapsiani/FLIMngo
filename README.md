@@ -18,6 +18,18 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 ## Usage 
 Predictions can be made using the **pretrained model** file, `flimngo_pretrained_v13102024.pth`.
 
+```bash
+git clone https://github.com/SofiaKapsiani/FLIMngo.git
+cd FLIMngo
+
+# Create and activate a Conda environment
+conda create --name flimngo_env python=3.9 -y
+conda activate flimngo_env
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
 ### Parameters
 
 - **Bin Width (ns)**: `bin_width` of time channels in nanoseconds for the raw data.  
