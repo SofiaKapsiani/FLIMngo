@@ -31,5 +31,5 @@ Predictions can be made using the **pretrained file** named `flimngo_pretrained_
 Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
 
 ## Demo Notebooks
+![test_git](https://github.com/user-attachments/assets/df51ff95-0a20-4ce8-8e71-b78983c7f7fd)
 
-![test_git](https://github.com/user-attachments/assets/a2810e35-b535-4ab1-b9ec-eaf3088fa221)
