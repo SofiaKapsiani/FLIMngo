@@ -4,9 +4,8 @@
 We present **FLIMngo**, a novel network for predicting fluorescence lifetimes from raw TCSPC-FLIM data. 
 Our model is based on the YOLOv5 architecture, which has been adapted for pixel-wise regression tasks. 
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/ffc3970d-05bd-4c24-8a81-3a42a4be55a1" alt="icon_filimpa" width="800" height="410">
-</div>
+
+![yolo_git](https://github.com/user-attachments/assets/4fe74fbd-726d-4dbc-bf02-75955c33fc2c)
 
 
 > **Deep learning for fluorescence lifetime predictions enables high-throughput in vivo imaging**          
