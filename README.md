@@ -30,6 +30,6 @@ To make predictions using **FLIMngo**, the following parameters must be specifie
 Predictions can be made using the **pretrained file** named `flimngo_pretrained_v13102024.pth`.
 Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
 
-## Demo Notebooks
+## Demo
 ![test_git](https://github.com/user-attachments/assets/df51ff95-0a20-4ce8-8e71-b78983c7f7fd)
 
