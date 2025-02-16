@@ -15,21 +15,35 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 [[`bioRxiv`](https://www.biorxiv.org/content/10.1101/2024.09.13.612802v1)]  [[`bibtex`](#bibtex-citation)]
 
 
-## Usage  
+## Usage 
+Predictions can be made using the **pretrained model** file, `flimngo_pretrained_v13102024.pth`.
 
-To make predictions using **FLIMngo**, the following parameters must be specified:  
+### Parameters
 
 - **Bin Width (ns)**: `bin_width` of time channels in nanoseconds for the raw data.  
-- ***x*, *y* dimensions**: input data must have equal `x` and `y` dimensions (e.g., `256 × 256`).  
-- **Time dimensions**:model currently only accepts raw data with **256 time dimensions**.  
-  - for data that do not match this requirement, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.  
-- **Normalisation**: time dimensions must be normalised to a range between `0` and `1`.  
-  - See `demo_notebooks` for preprocessing steps.  
-- **Background Masking**: the background should be masked either by intensity thresholding or by providing manual intensity masks (refer to `predict_celegans.ipynb` in `demo_notebooks` for details)  
+- **X, Y Dimensions**: Input data must have equal `x` and `y` dimensions (e.g., `256 × 256`).  
+- **Time Dimensions**: The model currently only accepts raw data with **256 time dimensions**.  
+  - For data that do not match this requirement, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.  
 
-Predictions can be made using the **pretrained file** named `flimngo_pretrained_v13102024.pth`.
+### Preprocessing  
+
+- **Normalisation**: Time dimensions should be normalised to a range between `0` and `1`.  
+  - See preprocessing steps in  `demo_notebooks`.
+- **Background Masking**: The background should be masked using either:  
+  - *Intensity thresholding*  
+  - *Manual intensity masks* (refer to `predict_celegans.ipynb` in `demo_notebooks` for details).  
+
 Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
 
 ## Demo
+
+FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence decay curves containing as few as 10 photon counts.
+
 ![test_git](https://github.com/user-attachments/assets/df51ff95-0a20-4ce8-8e71-b78983c7f7fd)
+
+### Notebooks  
+
+- **`predict_simulated.ipynb`**: Demonstrates FLIMngo's performance on synthetic FLIM data, where the same image is simulated with varying photon counts per pixel (ranging from **10 to 100 photon counts**).  
+- **`predict_reduced_photon_counts.ipynb`**: Provides examples of images acquired from different experiments with at least **100 photon counts per pixel**, alongside the same images with artificially reduced photon counts (**10–100 photons per pixel**).  
+
 
