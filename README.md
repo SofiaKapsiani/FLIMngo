@@ -26,3 +26,5 @@ To make predictions using **FLIMngo**, the following parameters must be specifie
 - **Normalisation**: time dimensions must be normalised to a range between `0` and `1`.  
   - See `demo_notebooks` for preprocessing steps.  
 - **Background Masking**: the background should be masked using either intensity thresholding or by providing manual intensity masks (refer to `predict_celegans.ipynb` in `demo_notebooks` for details)  
+
+Predictions can be made using the **pretrained file** named `flimngo_pretrained_v13102024.pth`. Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
