@@ -1,5 +1,5 @@
 
-![FLIMngo_logo_v1](https://github.com/user-attachments/assets/288959b0-4b53-4862-a0b8-ee91bba3799e)
+![FLIMngo_logo_v1](https://github.com/user-attachments/assets/6878689e-444e-4be6-bcd3-a55398a43c4b)
 
 ## Overview
 We present **FLIMngo**, a novel network for predicting fluorescence lifetimes from raw TCSPC-FLIM data. 
