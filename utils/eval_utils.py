@@ -4,6 +4,7 @@ import math
 import tifffile as tiff
 import sdtfile as sdt
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 def load_tiff(dir, filename):
     """
@@ -81,8 +82,7 @@ def mask_intensity(data, min_photons=100, max_photons=1000000):
     # Return the masked data
     return masked_data
 
-def visualise_images(images, filenames, cmap_c='jet', columns=3, vmin=None, vmax=None):
-    from mpl_toolkits.axes_grid1 import make_axes_locatable
+def visualise_images(images, filenames, cmap_c='jet', columns=3, vmin=None, vmax=None, save_path=None):
    
     # Number of columns for subplots (user-defined)
     cols = columns
@@ -121,6 +121,12 @@ def visualise_images(images, filenames, cmap_c='jet', columns=3, vmin=None, vmax
 
     # Adjust layout to prevent overlap
     plt.tight_layout()
+  
+    # save the figure if a save_path is provided
+    if save_path:
+      plt.savefig(save_path, dpi=300, bbox_inches="tight")
+      print(f"Figure saved to {save_path}")
+      
     # Show the plot
     plt.show()
 
