@@ -1,5 +1,5 @@
+# FL🦩Mngo
 
-![FLIMngo_logo_v1](https://github.com/user-attachments/assets/20b530c1-544c-4577-b1d6-1f9232cee558)
 
 
 
