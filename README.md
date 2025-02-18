@@ -62,5 +62,6 @@ Please note the model has been optimised for data collected with **IRFs** rangin
 
 ## Data simualtion
 
+![methodology_v2_git](https://github.com/user-attachments/assets/c58090e8-152d-4b79-98d1-d35bb081602b)
 
 
