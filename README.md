@@ -14,6 +14,19 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 >
 [[`bioRxiv`](https://www.biorxiv.org/content/10.1101/2024.09.13.612802v1)]  [[`bibtex`](#bibtex-citation)]
 
+## Demo
+
+FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence decay curves containing as few as 10 photon counts.
+
+![test_git](https://github.com/user-attachments/assets/df51ff95-0a20-4ce8-8e71-b78983c7f7fd)
+
+### Notebooks  
+
+- **`predict_simulated.ipynb`**: Evaluates performance on synthetic FLIM data with varying photon counts per pixel.  
+- **`predict_reduced_photon_counts.ipynb`**: Demonstrates performance on images from different experiments with at least **100 photon counts per pixel**, as well as the same images with artificially reduced photon counts (**10–100 photons per pixel**).  
+- **`predict_diff_time_dimensions.ipynb`**: Example of predicting lifetimes from input data that do not have **256 time dimensions**, with a method for time dimension adjustment.  
+- **`predict_celegans_dynamic.ipynb`**: Predicting lifetimes from dynamic, non-anesthetised *C. elegans*.
+
 
 ## Usage 
 Predictions can be made using the **pretrained model** file, `flimngo_pretrained_v13102024.pth`.
@@ -47,15 +60,7 @@ pip install -r requirements.txt
 
 Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
 
-## Demo
+## Data simualtion
 
-FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence decay curves containing as few as 10 photon counts.
-
-![test_git](https://github.com/user-attachments/assets/df51ff95-0a20-4ce8-8e71-b78983c7f7fd)
-
-### Notebooks  
-
-- **`predict_simulated.ipynb`**: Demonstrates FLIMngo's performance on synthetic FLIM data, where the same image is simulated with varying photon counts per pixel.  
-- **`predict_reduced_photon_counts.ipynb`**: Provides examples of images acquired from different experiments with at least **100 photon counts per pixel**, alongside the same images with artificially reduced photon counts (**10–100 photons per pixel**).  
 
 
