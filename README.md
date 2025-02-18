@@ -1,4 +1,4 @@
-![FLIMngo_logo](https://github.com/user-attachments/assets/4669dead-4d94-49e4-90b8-2c0a1911fec7)
+![FLIMngo_logo](https://github.com/user-attachments/assets/3c6a374f-af7b-4d75-9f06-6fd023033c08)
 
 
 ## Overview
