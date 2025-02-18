@@ -14,22 +14,8 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 >
 [[`bioRxiv`](https://www.biorxiv.org/content/10.1101/2024.09.13.612802v1)]  [[`bibtex`](#bibtex-citation)]
 
-## Demo
-
-FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence decay curves containing as few as 10 photon counts.
-
-![test_git](https://github.com/user-attachments/assets/df51ff95-0a20-4ce8-8e71-b78983c7f7fd)
-
-### Notebooks  
-
-- **`predict_simulated.ipynb`**: Evaluates performance on synthetic FLIM data with varying photon counts per pixel.  
-- **`predict_reduced_photon_counts.ipynb`**: Demonstrates performance on images from different experiments with at least **100 photon counts per pixel**, as well as the same images with artificially reduced photon counts (**10–100 photons per pixel**).  
-- **`predict_diff_time_dimensions.ipynb`**: Example of predicting lifetimes from input data that do not have **256 time dimensions**, with a method for time dimension adjustment.  
-- **`predict_celegans_dynamic.ipynb`**: Predicting lifetimes from dynamic, non-anesthetised *C. elegans*.
-
 
 ## Usage 
-Predictions can be made using the **pretrained model** file, `flimngo_pretrained_v13102024.pth`.
 
 ```bash
 git clone https://github.com/SofiaKapsiani/FLIMngo.git
@@ -42,6 +28,8 @@ conda activate flimngo_env
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+Predictions can be made using the **pretrained model** file, `flimngo_pretrained_v13102024.pth`.
 
 ### Parameters
 
@@ -60,11 +48,22 @@ pip install -r requirements.txt
 
 Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
 
-## Data simualtion
+## Demo
 
-![methodology_v2_git](https://github.com/user-attachments/assets/c58090e8-152d-4b79-98d1-d35bb081602b)
+FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence decay curves containing as few as 10 photon counts.
+
+![test_git](https://github.com/user-attachments/assets/df51ff95-0a20-4ce8-8e71-b78983c7f7fd)
 
 ### Notebooks  
+
+- **`predict_simulated.ipynb`**: Evaluates performance on synthetic FLIM data with varying photon counts per pixel.  
+- **`predict_reduced_photon_counts.ipynb`**: Demonstrates performance on images from different experiments with at least **100 photon counts per pixel**, as well as the same images with artificially reduced photon counts (**10–100 photons per pixel**).  
+- **`predict_diff_time_dimensions.ipynb`**: Example of predicting lifetimes from input data that do not have **256 time dimensions**, with a method for time dimension adjustment.  
+- **`predict_celegans_dynamic.ipynb`**: Predicting lifetimes from dynamic, non-anesthetised *C. elegans*.
+
+## Data simualtion
+
+![methodology_v2_git](https://github.com/user-attachments/assets/c58090e8-152d-4b79-98d1-d35bb081602b) 
 
 The fluorescence intensity images shown in **(a)** are taken from the **Human Protein Atlas (HPA) dataset** ([Kaggle HPA Single-Cell Image Classification](https://www.kaggle.com/c/hpa-single-cell-image-classification)).  
 
@@ -76,7 +75,7 @@ HPA images consist of **RGBY** color channels, representing:
 
 #### **Execution Order**  
 
-To generate simulated FLIM data, run the notebooks in the following order:  
+To generate simulated FLIM data, run the notebooks found in `data_simulation` in the following order:  
 
 1. **`notebook1_cropp_imgs.ipynb`**  
    - Applies a sliding window approach to extract **256×256 pixel sub-images** (x, y) from the HPA fluorescence intensity images, as shown in **(a)**.  
@@ -87,19 +86,19 @@ To generate simulated FLIM data, run the notebooks in the following order:
 3. **`notebook3_lifetime_simulation.ipynb`**  
    - Simulates **3D FLIM data** by assigning a fluorescence lifetime range to each HPA color channel, as illustrated in **(b)**.  
    - **Perlin noise** (example in **(c)**) is used to determine the fractional contribution of the first color channel to each pixel.  
-   - For each **non-background pixel**, fluorescence decay curves are simulated using the following equation:  
+   - For each **pixel**, fluorescence decay curves are simulated using the following equation:  
 
    
    $$
-   y(t) = IRF(t) \otimes \sum_{i=1}^{n} \left( a_i e^{-t/\tau_i} \right) + \text{noise} \tag{1}
+   y(t) = IRF \otimes \sum_{i=1}^{n} \left( a_i e^{-t/\tau_i} \right) + \text{noise} \tag{1}
    $$  
 
    where:  
-  - **IRF(t)** represents the instrument response function.  
-  - **n** is the number of lifetime components (i.e., the number of color channels contributing to the pixel).  
-  - **aᵢ** and **τᵢ** are the fractional contribution and fluorescence lifetime of each color channel at a given pixel, respectively.  
-  - **Noise** accounts for the Poisson noise typically encountered in TCSPC systems.  
-  - **⊗** denotes the convolution between the decay curve and the IRF.  
+  -  $$IRF$$ represents the instrument response function.  
+  - $$n$$ is the number of lifetime components (i.e., the number of color channels contributing to the pixel).  
+  - $$a_i$$ and $$\tau_i$$ are the fractional contribution and fluorescence lifetime of each color channel at a given pixel, respectively.  
+  - $$\text{noise}$$ accounts for the Poisson noise typically encountered in TCSPC systems.  
+  - $$\otimes$$ denotes the convolution between the decay curve and the IRF.  
 
 For further details, please refer to the **Methods** section of our manuscript. 
 
