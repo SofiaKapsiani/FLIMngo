@@ -75,7 +75,7 @@ HPA images consist of **RGBY** color channels, representing:
 
 #### **Execution Order**  
 
-To generate simulated FLIM data, run the notebooks found in `data_simulation` in the following order:  
+To generate simulated FLIM data, run the notebooks found in `data_simulation` directory in the following order:  
 
 1. **`notebook1_cropp_imgs.ipynb`**  
    - Applies a sliding window approach to extract **256×256 pixel sub-images** (x, y) from the HPA fluorescence intensity images, as shown in **(a)**.  
@@ -101,5 +101,14 @@ To generate simulated FLIM data, run the notebooks found in `data_simulation` in
   - $$\otimes$$ denotes the convolution between the decay curve and the IRF.  
 
 For further details, please refer to the **Methods** section of our manuscript. 
+
+
+# Citation
+
+*If you found **FLIMngo** helpful, please consider citing our work!* 😊
+<a name="bibtex-citation"></a>
+```
+
+```
 
 
