@@ -1,4 +1,4 @@
-# FL🦩Mngo
+# FL🦩Mngo: deep learning for fluorescence lifetime predictions 
 
 
 
