@@ -4,13 +4,13 @@
 
 The fluorescence intensity images shown in **(a)** are taken from the **Human Protein Atlas (HPA) dataset** ([Kaggle HPA Single-Cell Image Classification](https://www.kaggle.com/c/hpa-single-cell-image-classification)).  
 
-HPA images consist of **RGBY** color channels, representing:  
+HPA images consist of **RGBY** colour channels, representing:  
 - **R** (Red) – Microtubules  
-- **G** (Green) – Protein  
+- **G** (Green) – Protein
 - **B** (Blue) – Nucleus  
 - **Y** (Yellow) – Endoplasmic Reticulum (ER)  
 
-#### **Execution Order**  
+### **Execution Order**  
 
 1. **`notebook1_cropp_imgs.ipynb`**  
    - Applies a sliding window approach to extract **256×256 pixel sub-images** (x, y) from the HPA fluorescence intensity images, as shown in **(a)**.  
@@ -37,3 +37,8 @@ HPA images consist of **RGBY** color channels, representing:
 
 For further details, please refer to the **Methods** section of our manuscript. 
 
+
+### `data` directory 
+
+- `HPA_raw`: sample HPA images, where each sample consist of four files named based on the colour channel (`red`, `green`, `blue`, `yellow`)
+- `irfs`: experimental IRFs obtained from different sources
