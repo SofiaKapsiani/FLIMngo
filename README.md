@@ -16,7 +16,6 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 > Sofia Kapsiani, Nino F Läubli, Edward N. Ward, Ana Fernandez-Villegas, Bismoy Mazumder, Clemens F. Kaminski, Gabriele S. Kaminski Schierle    
 > <a href="https://www.ceb-mng.org/" target="_blank">Molecular Neuroscience Group</a> and <a href="https://laser.ceb.cam.ac.uk/" target="_blank">Laser Analytics Group</a> (University of Cambridge)
 >
-[[`bioRxiv`](https://www.biorxiv.org/content/10.1101/2024.09.13.612802v1)]  [[`bibtex`](#bibtex-citation)]
 
 
 ## Usage 
@@ -48,7 +47,7 @@ Predictions can be made using the **pretrained model** file, `flimngo_pretrained
   - See preprocessing steps in  `demo_notebooks`.
 - **Background Masking**: The background should be masked using either:  
   - *Intensity thresholding*  
-  - *Manual intensity masks* (refer to `predict_celegans.ipynb` in `demo_notebooks` for details).  
+  - *Manual intensity masks* (refer to `predict_celegans_dynamic.ipynb` in `demo_notebooks` for details).  
 
 Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
 
@@ -104,15 +103,6 @@ To generate simulated FLIM data, run the notebooks found in `data_simulation` di
   - $$\text{noise}$$ accounts for the Poisson noise typically encountered in TCSPC systems.  
   - $$\otimes$$ denotes the convolution between the decay curve and the IRF.  
 
-For further details, please refer to the **Methods** section of our manuscript. 
-
-
-# Citation
-
-*If you found **FLIMngo** helpful, please consider citing our work!* 😊
-<a name="bibtex-citation"></a>
-```
-
-```
+For further details, please refer to the **Materials and Methods** section of our manuscript. 
 
 
