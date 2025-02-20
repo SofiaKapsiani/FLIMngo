@@ -7,6 +7,7 @@ import torchvision
 import functools # used by RRDBNet
 from torchvision.transforms import Resize
 
+# Model selection function
 def GetModel(opt):
     
     if opt.model.lower() == 'flimngo':
@@ -20,7 +21,7 @@ def GetModel(opt):
 
     return net
 
-## Yolo Network for zernike (RCAN_zernike)
+# Conv-BN-SiLU block
 class CBL(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride, padding):
         super(CBL, self).__init__()
@@ -37,7 +38,8 @@ class CBL(nn.Module):
 
     def forward(self, x):
         return self.cbl(x)
-    
+
+# Residual bottleneck block
 class Bottleneck(nn.Module):
     """
     Parameters:
@@ -58,6 +60,7 @@ class Bottleneck(nn.Module):
     def forward(self, x):
         return self.c2(self.c1(x)) + x
 
+# C3 block with residual bottlenecks
 class C3(nn.Module):
     """
     Parameters:
@@ -97,6 +100,7 @@ class C3(nn.Module):
         x = torch.cat([self.seq(self.c1(x)), self.c_skipped(x)], dim=1)
         return self.c_out(x)   
 
+# Spatial Pyramid Pooling Fast (SPPF)
 class SPPF(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(SPPF, self).__init__()
@@ -115,7 +119,7 @@ class SPPF(nn.Module):
 
         return self.c_out(torch.cat([x, pool1, pool2, pool3], dim=1))
 
-
+# FLIMngo model
 class FLIMngo(nn.Module):
     def __init__(self, opt):
         super(FLIMngo, self).__init__()
@@ -134,7 +138,8 @@ class FLIMngo(nn.Module):
             CBL(n_in_channels, 2*self.first_out, kernel_size=5, stride=1, padding=2),
             CBL(2*self.first_out, 2*self.first_out, kernel_size=3, stride=2, padding=1)
         )
-
+        
+        # Encoder
         self.down_one = nn.Sequential(
             C3(in_channels=2*self.first_out, out_channels=2*self.first_out, width_multiple=self.width_multiple, depth=4),
             CBL(2*self.first_out, 4*self.first_out, kernel_size=3, stride=2, padding=1)
@@ -146,6 +151,7 @@ class FLIMngo(nn.Module):
             SPPF(8*self.first_out, 8*self.first_out)
         )
 
+        # Decoder
         self.up_one = nn.Sequential(
             CBL(8*self.first_out, 4*self.first_out, kernel_size=1, stride=1, padding=0),
             Resize((int(im_size/4), int(im_size/4)))
@@ -164,25 +170,24 @@ class FLIMngo(nn.Module):
             Resize((int(im_size), int(im_size))),
             CBL(2*self.first_out, self.first_out, kernel_size=1, stride=1, padding=0),
             C3(in_channels=self.first_out, out_channels=self.first_out, width_multiple=self.width_multiple, depth=2),
-            nn.Conv2d(in_channels=self.first_out, out_channels=1, kernel_size=3, stride=1, padding=1, bias=False),
+            nn.Conv2d(in_channels=self.first_out, out_channels=1, kernel_size=3, stride=1, padding=1, bias=False), 
             nn.ReLU(inplace=True)
         )
     
     def forward(self, x):
-        """Through encoder, then decoder by adding U-skip connections. """
-        # x = [256 256 1]
+        """Forward pass with U-Net-like skip connections"""
+        # x = [256 256 256]
 
         # Encoder
-        pool1 = self.head(x) # [128 128 128]
-        pool2 = self.down_one(pool1) # [64 64 256]
-        pool3 = self.down_two(pool2) # [32 32 512]
+        pool1 = self.head(x) # First downsampling --> [172, 128, 128]
+        pool2 = self.down_one(pool1) # Second downsampling --> [344, 64, 64]
+        pool3 = self.down_two(pool2) # Third downsampling --> [688, 32, 32]
 
         # Decoder
-        concat_1 = torch.cat([self.up_one(pool3), pool2], dim=1) # [64 64 512]
-        concat_2 = torch.cat([self.up_two(concat_1), pool1], dim=1) # [128 128 256
+        concat_1 = torch.cat([self.up_one(pool3), pool2], dim=1) # First upsampling --> [688, 64, 64]
+        concat_2 = torch.cat([self.up_two(concat_1), pool1], dim=1) # Second upsampling --> [344, 128, 128]
         
-        # Final activation
-        output = self.tail(concat_2)  # [B, 1, H, W]
+        output = self.tail(concat_2) # Final processing --> [1, 256, 256]
 
-        return output.squeeze() * self.bin_width_ratio  # Remove channel dimension if needed 
+        return output.squeeze() * self.bin_width_ratio # Squeeze to remove extra dimensions and adust output based on input bin width
    
