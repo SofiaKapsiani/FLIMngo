@@ -107,7 +107,7 @@ For further details, please refer to the **Materials and Methods** section of ou
 
 # Citation
 
-*If you found **FLIMngo** helpful for your data analysis, please consider citing our work!* 😊
+*If you found **FLIMngo** helpful, please consider citing our work!* 😊
 <a name="bibtex-citation"></a>
 ```
 @article {Kapsiani2025.02.20.639036,
