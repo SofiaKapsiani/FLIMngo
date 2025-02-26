@@ -9,7 +9,7 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 ![yolo_git](https://github.com/user-attachments/assets/d2b4473c-cf28-4c3a-8a37-4a4d68f15ff0)
 
 
-> **Deep learning for fluorescence lifetime predictions enables high-throughput in vivo imaging**          
+> **Deep learning for fluorescence lifetime predictions enables high-throughput *in vivo* imaging**          
 > Sofia Kapsiani, Nino F Läubli, Edward N. Ward, Ana Fernandez-Villegas, Bismoy Mazumder, Clemens F. Kaminski, Gabriele S. Kaminski Schierle    
 > <a href="https://www.ceb-mng.org/" target="_blank">Molecular Neuroscience Group</a> and <a href="https://laser.ceb.cam.ac.uk/" target="_blank">Laser Analytics Group</a> (University of Cambridge)
 >
