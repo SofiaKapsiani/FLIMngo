@@ -14,7 +14,7 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 > <a href="https://www.ceb-mng.org/" target="_blank">Molecular Neuroscience Group</a> and <a href="https://laser.ceb.cam.ac.uk/" target="_blank">Laser Analytics Group</a> (University of Cambridge)
 >
 
- [[`bioRxiv`](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1)]  [[`bibtex`](#bibtex-citation)]
+ [[`manuscript(bioRxiv)`](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1)]  [[`bibtex`](#bibtex-citation)]
 
 
 ## Usage 
@@ -102,7 +102,7 @@ To generate simulated FLIM data, run the notebooks found in `data_simulation` di
   - $$\text{noise}$$ accounts for the Poisson noise typically encountered in TCSPC systems.  
   - $$\otimes$$ denotes the convolution between the decay curve and the IRF.  
 
-For further details, please refer to the **Materials and Methods** section of our manuscript. 
+For further details, please refer to the **Materials and Methods** section of our [manuscript](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1). 
 
 
 # Citation
