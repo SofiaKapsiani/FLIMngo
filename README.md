@@ -1,9 +1,6 @@
 # FL🦩Mngo: deep learning for fluorescence lifetime predictions 
 
 
-
-
-## Overview
 We present **FLIMngo**, a novel network for predicting fluorescence lifetimes from raw TCSPC-FLIM data. 
 Our model is based on the YOLOv5 architecture, which has been adapted for pixel-wise regression tasks. 
 
@@ -16,6 +13,8 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 > Sofia Kapsiani, Nino F Läubli, Edward N. Ward, Ana Fernandez-Villegas, Bismoy Mazumder, Clemens F. Kaminski, Gabriele S. Kaminski Schierle    
 > <a href="https://www.ceb-mng.org/" target="_blank">Molecular Neuroscience Group</a> and <a href="https://laser.ceb.cam.ac.uk/" target="_blank">Laser Analytics Group</a> (University of Cambridge)
 >
+
+ [[`bioRxiv`](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1)]  [[`bibtex`](#bibtex-citation)]
 
 
 ## Usage 
@@ -106,3 +105,20 @@ To generate simulated FLIM data, run the notebooks found in `data_simulation` di
 For further details, please refer to the **Materials and Methods** section of our manuscript. 
 
 
+# Citation
+
+*If you found **FLIMngo** helpful for your data analysis, please consider citing our work!* 😊
+<a name="bibtex-citation"></a>
+```
+@article {Kapsiani2025.02.20.639036,
+	author = {Kapsiani, Sofia and L{\"a}ubli, Nino F and Ward, Edward N and Fernandez-Villegas, Ana and Mazumder, Bismoy and Kaminski, Clemens F and Kaminski Schierle, Gabriele S},
+	title = {Deep learning for fluorescence lifetime predictions enables high-throughput in vivo imaging},
+	elocation-id = {2025.02.20.639036},
+	year = {2025},
+	doi = {10.1101/2025.02.20.639036},
+	URL = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639036},
+	eprint = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639036.full.pdf},
+	journal = {bioRxiv}
+}
+
+```
