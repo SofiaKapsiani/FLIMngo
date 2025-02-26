@@ -14,7 +14,7 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 > <a href="https://www.ceb-mng.org/" target="_blank">Molecular Neuroscience Group</a> and <a href="https://laser.ceb.cam.ac.uk/" target="_blank">Laser Analytics Group</a> (University of Cambridge)
 >
 
- [[`manuscript(bioRxiv)`](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1)]  [[`bibtex`](#bibtex-citation)]
+ [[`manuscript(bioRxiv)`](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1)] [['Supplementary information']()] [[`bibtex`](#bibtex-citation)] 
 
 
 ## Usage 
