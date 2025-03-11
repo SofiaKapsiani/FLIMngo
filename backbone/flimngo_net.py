@@ -22,6 +22,9 @@ def GetModel(opt):
     return net
 
 # Conv-BN-SiLU block
+
+# CBL and C3 blocks are based on Pytorch implementation of the Yolo v5 network repository:
+# https://github.com/AlessandroMondin/YOLOV5m
 class CBL(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride, padding):
         super(CBL, self).__init__()
@@ -61,6 +64,7 @@ class Bottleneck(nn.Module):
         return self.c2(self.c1(x)) + x
 
 # C3 block with residual bottlenecks
+
 class C3(nn.Module):
     """
     Parameters:
