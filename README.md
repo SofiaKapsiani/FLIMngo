@@ -5,8 +5,8 @@ We present **FLIMngo**, a novel network for predicting fluorescence lifetimes fr
 Our model is based on the YOLOv5 architecture, which has been adapted for pixel-wise regression tasks. 
 
 
+![yolo_celegans_git](https://github.com/user-attachments/assets/3d5319d9-c859-45ad-a658-c8b0c3d47924)
 
-![yolo_git](https://github.com/user-attachments/assets/d2b4473c-cf28-4c3a-8a37-4a4d68f15ff0)
 
 
 > **Deep learning for fluorescence lifetime predictions enables high-throughput *in vivo* imaging**          
@@ -36,9 +36,10 @@ Predictions can be made using the **pretrained model** file, `flimngo_pretrained
 ### Parameters
 
 - **Bin Width (ns)**: `bin_width` of time channels in nanoseconds for the raw data.  
-- **X, Y Dimensions**: Input data must have equal `x` and `y` dimensions (e.g., `256 × 256`).  
+- **x, y Dimensions**: Input data must have equal `x` and `y` dimensions (e.g., `256 × 256`).
+	- Please crop or pad the data if this not the case.
 - **Time Dimensions**: The model currently only accepts raw data with **256 time dimensions**.  
-  - For data that do not match this requirement, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.  
+  - Alternatively, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.  
 
 ### Preprocessing  
 
@@ -48,7 +49,10 @@ Predictions can be made using the **pretrained model** file, `flimngo_pretrained
   - *Intensity thresholding*  
   - *Manual intensity masks* (refer to `predict_celegans_dynamic.ipynb` in `demo_notebooks` for details).  
 
-Please note the model has been optimised for data collected with **IRFs** ranging from `100-400` ps.
+### Limitations  
+- The model is optimised for data with **IRFs** having a full width at half maximum (FWHM) between `100-400` ps.
+- Can only predict **fluorescence lifetime** values within the range of `0.1 and 10` ns.
+
 
 ## Demo
 
@@ -58,10 +62,12 @@ FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence 
 
 ### Notebooks  
 
-- **`predict_simulated.ipynb`**: Evaluates performance on synthetic FLIM data with varying photon counts per pixel.  
-- **`predict_reduced_photon_counts.ipynb`**: Demonstrates performance on images from different experiments with at least **100 photon counts per pixel**, as well as the same images with artificially reduced photon counts (**10–100 photons per pixel**).  
-- **`predict_diff_time_dimensions.ipynb`**: Example of predicting lifetimes from input data that do not have **256 time dimensions**, with a method for time dimension adjustment.  
-- **`predict_celegans_dynamic.ipynb`**: Predicting lifetimes from dynamic, non-anesthetised *C. elegans*.
+- **`predict_simulated.ipynb`**: Synthetic FLIM data with varying photon counts per pixel (`.tif` files).  
+- **`predict_reduced_photon_counts.ipynb`**: Images from different experiments with at least **100 photon counts per pixel**, as well as the same images with artificially reduced photon counts (**10–100 photons per pixel**) (`.tif` files).  
+- **`predict_diff_time_dimensions.ipynb`**: Predicting lifetimes from input data that do not have **256 time dimensions**, with a method for time dimension adjustment (`.tif` files).  
+- **`predict_celegans_dynamic.ipynb`**: Predicting lifetimes from dynamic, non-anesthetised *C. elegans* (`.sdt` files).
+
+Please note, `.ptu` files can be analysed with [ptufile](https://pypi.org/project/ptufile/) library.
 
 ## Data simualtion
 
