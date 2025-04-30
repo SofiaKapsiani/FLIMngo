@@ -36,10 +36,11 @@ Predictions can be made using the **pretrained model** file, `flimngo_pretrained
 ### Parameters
 
 - **Bin Width (ns)**: `bin_width` of time channels in nanoseconds for the raw data.  
-- **x, y Dimensions**: Input data must have equal `x` and `y` dimensions (e.g., `256 × 256`).
+- **x, y Dimensions**: Input data must have **equal** and **even** `x` and `y` dimensions (e.g., `256 × 256`).
 	- Please crop or pad the data if this not the case.
 - **Time Dimensions**: The model currently only accepts raw data with **256 time dimensions**.  
-  - Alternatively, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.  
+  - Alternatively, refer to `predict_diff_time_dimensions.ipynb` in `demo_notebooks` for a method to artificially expand/compress time dimensions.
+  - **This resampling method has been tested for data with time dimensions between 50 and 1000 bins.** Performance accuracy may drop outside this range.
 
 ### Preprocessing  
 
@@ -49,7 +50,7 @@ Predictions can be made using the **pretrained model** file, `flimngo_pretrained
   - *Intensity thresholding*  
   - *Manual intensity masks* (refer to `predict_celegans_dynamic.ipynb` in `demo_notebooks` for details).  
 
-### Limitations  
+### IRF and fluorescence lifetime ranges  
 - The model is optimised for data with **IRFs** having a full width at half maximum (FWHM) between `100-400` ps.
 - Can only predict **fluorescence lifetime** values within the range of `0.1 and 10` ns.
 
