@@ -75,7 +75,7 @@ def init_model(args, train_set):
             self.cpu = not torch.cuda.is_available()
             self.imageSize = train_set[0][0].shape[-1] # spatial (x,y) dimentions
             self.n_in_channels = 256 # number of time channels, only works for 256
-            self.time_resolution = 0.09765625 # time resolution (in ns)
+            self.bin_width = 0.09765625 # time resolution (in ns)
             self.width_multiple = args.width_multiple
 
     opt = Options()
