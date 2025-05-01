@@ -24,7 +24,7 @@ git clone https://github.com/SofiaKapsiani/FLIMngo.git
 cd FLIMngo
 
 # Create and activate a Conda environment
-conda create --name flimngo_env python=3.9 -y
+conda create --name flimngo_env python=3.11 -y
 conda activate flimngo_env
 
 # Install dependencies
