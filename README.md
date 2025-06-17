@@ -9,12 +9,12 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 
 
 
-> **Deep learning for fluorescence lifetime predictions enables high-throughput *in vivo* imaging**          
+> **Deep Learning for Fluorescence Lifetime Predictions Enables High-Throughput In Vivo Imaging**, published in the *Journal of the American Chemical Society (JACS)*     
 > Sofia Kapsiani, Nino F Läubli, Edward N. Ward, Ana Fernandez-Villegas, Bismoy Mazumder, Clemens F. Kaminski, Gabriele S. Kaminski Schierle    
 > <a href="https://www.ceb-mng.org/" target="_blank">Molecular Neuroscience Group</a> and <a href="https://laser.ceb.cam.ac.uk/" target="_blank">Laser Analytics Group</a> (University of Cambridge)
 >
 
- [[`Manuscript(bioRxiv)`](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1)] [[`Supplementary Information`]()] [[`Citation`](#bibtex-citation)] 
+ [[`Manuscript`](https://pubs.acs.org/doi/10.1021/jacs.5c03749)] [[`Supporting Information`](https://pubs.acs.org/doi/10.1021/jacs.5c03749#_i31)] [[`Citation`](#bibtex-citation)] 
 
 
 ## Usage 
@@ -68,7 +68,7 @@ FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence 
 - **`predict_diff_time_dimensions.ipynb`**: Predicting lifetimes from input data that do not have **256 time dimensions**, with a method for time dimension adjustment (`.tif` files).  
 - **`predict_celegans_dynamic.ipynb`**: Predicting lifetimes from dynamic, non-anesthetised *C. elegans* (`.sdt` files).
 
-Please note, `.ptu` files can be analysed with [ptufile](https://pypi.org/project/ptufile/) library.
+Please note, `.ptu` files can be imported using the [ptufile](https://pypi.org/project/ptufile/) library.
 
 ## Data simualtion
 
@@ -109,7 +109,7 @@ To generate simulated FLIM data, run the notebooks found in `data_simulation` di
   - $$\text{noise}$$ accounts for the Poisson noise typically encountered in TCSPC systems.  
   - $$\otimes$$ denotes the convolution between the decay curve and the IRF.  
 
-For further details, please refer to the **Materials and Methods** section of our [manuscript](https://www.biorxiv.org/content/10.1101/2025.02.20.639036v1). 
+For further details, please refer to the **Materials and Methods** section of our [manuscript](https://pubs.acs.org/doi/10.1021/jacs.5c03749). 
 
 
 # Citation
@@ -117,15 +117,11 @@ For further details, please refer to the **Materials and Methods** section of ou
 *If you found **FLIMngo** helpful, please consider citing our work!* 😊
 <a name="bibtex-citation"></a>
 ```
-@article {Kapsiani2025.02.20.639036,
-	author = {Kapsiani, Sofia and L{\"a}ubli, Nino F and Ward, Edward N and Fernandez-Villegas, Ana and Mazumder, Bismoy and Kaminski, Clemens F and Kaminski Schierle, Gabriele S},
-	title = {Deep learning for fluorescence lifetime predictions enables high-throughput in vivo imaging},
-	elocation-id = {2025.02.20.639036},
-	year = {2025},
-	doi = {10.1101/2025.02.20.639036},
-	URL = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639036},
-	eprint = {https://www.biorxiv.org/content/early/2025/02/26/2025.02.20.639036.full.pdf},
-	journal = {bioRxiv}
+@article{kapsiani2025deep,
+  title={Deep learning for fluorescence lifetime predictions enables high-throughput in vivo imaging},
+  author={Kapsiani, Sofia and Läubli, Nino F and Ward, Edward N and Fernandez-Villegas, Ana and Mazumder, Bismoy and Kaminski, Clemens F and Kaminski Schierle, Gabriele S},
+  journal={Journal of the American Chemical Society},
+  year={2025},
+  publisher={ACS Publications}
 }
-
 ```
