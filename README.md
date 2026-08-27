@@ -14,7 +14,7 @@ Our model is based on the YOLOv5 architecture, which has been adapted for pixel-
 > <a href="https://www.ceb-mng.org/" target="_blank">Molecular Neuroscience Group</a> and <a href="https://laser.ceb.cam.ac.uk/" target="_blank">Laser Analytics Group</a> (University of Cambridge)
 >
 
- [[`Manuscript`](https://pubs.acs.org/doi/10.1021/jacs.5c03749)] [[`Supporting Information`](https://pubs.acs.org/doi/10.1021/jacs.5c03749#_i31)] [[`Citation`](#bibtex-citation)] 
+ [[`Manuscript`](https://pubs.acs.org/doi/10.1021/jacs.5c03749)] [[`Dataset`](https://huggingface.co/datasets/SofiaKaps/FLIMngo_data)]  [[`Supporting Information`](https://pubs.acs.org/doi/10.1021/jacs.5c03749#_i31)] [[`Citation`](#bibtex-citation)] 
 
 
 ## Usage 
@@ -32,6 +32,9 @@ pip install -r requirements.txt
 ```
 
 Predictions can be made using the **pretrained model** file, `flimngo_pretrained_v13102024.pth`.
+
+## Dataset
+The full dataset of 1242 simulated FLIM images used for model training can be found in ([Hugging Face](https://huggingface.co/datasets/SofiaKaps/FLIMngo_data)).
 
 ### Parameters
 
@@ -70,11 +73,11 @@ FLIMngo maintains high prediction accuracy even for FLIM data with fluorescence 
 
 Please note, `.ptu` files can be imported using the [ptufile](https://pypi.org/project/ptufile/) library.
 
-## Data simualtion
+## Data simulation
 
 ![methodology_v2_git](https://github.com/user-attachments/assets/c58090e8-152d-4b79-98d1-d35bb081602b) 
 
-The fluorescence intensity images shown in **(a)** are taken from the **Human Protein Atlas (HPA) dataset** ([Kaggle HPA Single-Cell Image Classification](https://www.kaggle.com/c/hpa-single-cell-image-classification)).  
+The fluorescence intensity images shown in **(a)** are taken from the **Human Protein Atlas (HPA) dataset** ([proteinatlas.org](https://www.proteinatlas.org/)).
 
 HPA images consist of **RGBY** color channels, representing:  
 - **R** (Red) – Microtubules  

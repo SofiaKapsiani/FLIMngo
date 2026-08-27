@@ -1,8 +1,8 @@
-## Data simualtion
+## Data simulation
 
 ![methodology_v2_git](https://github.com/user-attachments/assets/c58090e8-152d-4b79-98d1-d35bb081602b) 
 
-The fluorescence intensity images shown in **(a)** are taken from the **Human Protein Atlas (HPA) dataset** ([Kaggle HPA Single-Cell Image Classification](https://www.kaggle.com/c/hpa-single-cell-image-classification)).  
+The fluorescence intensity images shown in **(a)** are taken from the **Human Protein Atlas (HPA) dataset** ([proteinatlas.org](https://www.proteinatlas.org/)).  
 
 HPA images consist of **RGBY** colour channels, representing:  
 - **R** (Red) – Microtubules  
@@ -42,3 +42,8 @@ For further details, please refer to the **Methods** section of our manuscript.
 
 - `HPA_raw`: sample HPA images, where each sample consist of four files named based on the colour channel (`red`, `green`, `blue`, `yellow`)
 - `irfs`: experimental IRFs obtained from different sources
+
+
+## Full dataset
+
+The full data of 1242 images used for training FLIMngo can be found in ([Hugging Face](https://huggingface.co/datasets/SofiaKaps/FLIMngo_data))
