@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 Predictions can be made using the **pretrained model** file, `flimngo_pretrained_v13102024.pth`.
 
-## Dataset
+### Dataset
 The full dataset of 1242 simulated FLIM images used for model training can be found in ([Hugging Face](https://huggingface.co/datasets/SofiaKaps/FLIMngo_data)).
 
 ### Parameters
