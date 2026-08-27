@@ -46,4 +46,4 @@ For further details, please refer to the **Methods** section of our manuscript.
 
 ## Full dataset
 
-The full data of 1242 images used for training FLIMngo can be found in ([Hugging Face](https://huggingface.co/datasets/SofiaKaps/FLIMngo_data))
+The full data of 1242 images used for training FLIMngo can be found in [Hugging Face](https://huggingface.co/datasets/SofiaKaps/FLIMngo_data).
